@@ -1,0 +1,18 @@
+.btn {
+    letter-spacing: 1px;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &__primary {
+        background-color: var(--blue);
+        font-size: .9rem;
+        width: 30%;
+    }
+
+    &:hover {
+        // background-color: var(--grey1);
+        filter: brightness(.7);
+    }
+}
