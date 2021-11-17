@@ -1,6 +1,5 @@
 <template>
   <div class="layout">
-    <Sidebar />
     <h2>CDRs</h2>
   </div>
 </template>

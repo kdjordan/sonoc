@@ -1,4 +1,13 @@
 .layout {
     display: grid;
-    grid-template-columns: minmax(100px, 15%) 1fr;
+    grid-template-columns: minmax(150px, 15%) 1fr;
+  }
+
+  .flex-row {
+    display: flex
+  }
+
+  .flex-col {
+    display: flex;
+    flex-direction : column;
   }

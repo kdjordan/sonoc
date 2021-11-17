@@ -1,6 +1,5 @@
 <template>
   <div class="layout">
-    <Sidebar />
     <h2>Accounts</h2>
   </div>
 </template>

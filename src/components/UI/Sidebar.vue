@@ -11,7 +11,7 @@
       </li>
       <li>
         <router-link to="/finance" class="sidebar__nav-link">
-         <i class="fas fa-university"></i></i>Finance
+         <i class="fas fa-university"></i>Finance
         </router-link>
       </li>
       <li>

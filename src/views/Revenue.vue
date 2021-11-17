@@ -1,6 +1,5 @@
 <template>
   <div class="layout">
-    <Sidebar />
     <h2>Revenue</h2>
   </div>
 </template>
