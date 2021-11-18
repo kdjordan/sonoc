@@ -31,21 +31,26 @@
         <!-- end of top card -->
       </div>
       <div class="dash__wrapper">
-        <div class="card">
-          <div class="card__title">TOP REVENUE</div>
+        <div class="card__title">PERFORMANCE</div>
+        <div class="card flex-row" style="justify-content: space-around;">
+          <LineChart />
+          <PieChart />
         </div>
       </div>
-      
     </div>
   </div>
 </template>
 
 <script>
 import Sidebar from '@/components/UI/Sidebar';
+import LineChart from '@/components/UI/LineChart';
+import PieChart from '@/components/UI/PieChart';
 
 export default {
   components: {
     Sidebar,
+    LineChart,
+    PieChart
   },
 };
 </script>

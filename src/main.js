@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import '@/plugins/apexcharts'
 
 // Import the Auth0 configuration
 import { domain, clientId } from "../auth_config.json";
@@ -16,7 +17,7 @@ Vue.use(Auth0Plugin, {
       appState && appState.targetUrl
         ? appState.targetUrl
         : window.location.pathname
-    );
+    );d
   }
 });
 

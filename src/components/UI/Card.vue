@@ -19,7 +19,6 @@ export default {
 <style lang="scss" scoped> 
 
 .card {
-    border: 1px solid red;
     .card__header {
         background-color: var(--blue);
         color: white;
