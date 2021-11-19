@@ -18,11 +18,12 @@ export default {
 
 <style lang="scss" scoped>
 @import '../styles/_layout.scss';
+@import '../styles/_card.scss';
 
 .view {
   width: 78%;
   margin: 0 auto;
-  margin-top: 8%;
+  margin-top: 10%;
 }
 .chart {
   & h2 {
@@ -32,30 +33,5 @@ export default {
     color: var(--grey1);
   }
 }
-.card {
-  box-shadow: 0 0 8px 5px #d0d0d0;
 
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-  }
-
-  &__title {
-    background: var(--blue);
-    color: white;
-    text-align: center;
-    font-size: 1.6rem;
-  }
-
-  &__col {
-    width: 50%;
-
-    &--right {
-      & div:not(:first-child) {
-        margin: 0.2rem 0;
-      }
-    }
-  }
-}
 </style>

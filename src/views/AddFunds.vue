@@ -44,32 +44,21 @@ export default {
 
 <style lang="scss" scoped>
 @import '../styles/_layout.scss';
+@import '../styles/_card.scss';
 //border: 1px solid red;
 .card {
-  box-shadow: 0 0 8px 5px #d0d0d0;
-  width: 50%;
-  margin-top: 15%;
-
+  
   &__wrapper {
     margin-top: 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem 1.5rem;
-    // border: 1px solid red;
-  }
-
-  &__title {
-    background: var(--blue);
-    color: white;
-    text-align: center;
-    font-size: 1.6rem;
-    text-transform: uppercase;
   }
 }
 
 .finance {
-  margin-top: 2rem;
+  margin-top: 10%;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -104,7 +93,7 @@ export default {
       color: white;
       cursor: pointer;
       border: 1px solid transparent;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
 
       &:hover {
         border: 1px solid var(--blue);

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card">
     <svg
       version="1.1"
       id="Layer_1"
@@ -61,6 +61,7 @@ export default {};
 </script>
 
 <style>
+@import '../../styles/_card.scss';
 .st0 {
   fill: #184428;
 }
