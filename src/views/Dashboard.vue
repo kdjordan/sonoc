@@ -59,6 +59,7 @@ export default {
 @import '../styles/_layout.scss';
 
 .dash {
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   align-content: center;

@@ -1,6 +1,5 @@
 <template>
   <div class="chart">
-    <h2>USAGE CPS</h2>
     <apexchart type="bar" :options="chartOptions" :series="series"> </apexchart>
   </div>
 </template>
@@ -43,12 +42,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.chart {
-  & h2 {
-      padding: 1rem 0;
-      font-size: 1rem;
-      text-align: center;
-      color: var(--grey1);
-  }
-}
+
 </style>

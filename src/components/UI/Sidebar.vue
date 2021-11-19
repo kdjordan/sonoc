@@ -6,37 +6,37 @@
     <ul class="sidebar__nav">
       <li>
         <router-link to="/dashboard" class="sidebar__nav-link">
-          <i class="fas fa-tachometer-alt"></i>Quicklook
+          <i class="fas fa-tachometer-alt"></i>QUICKLOOK
         </router-link>
       </li>
       <li>
-        <router-link to="/finance" class="sidebar__nav-link">
-         <i class="fas fa-university"></i>Finance
+        <router-link to="/addfunds" class="sidebar__nav-link">
+         <i class="fas fa-university"></i>ADD FUNDS
         </router-link>
       </li>
       <li>
         <router-link to="/usage" class="sidebar__nav-link">
-        <i class="fas fa-chart-bar"></i>Usage
+        <i class="fas fa-chart-bar"></i>USAGE
         </router-link>
       </li>
       <li>
         <router-link to="/revenue" class="sidebar__nav-link">
-         <i class="fas fa-dollar-sign"></i>Revenue
+         <i class="fas fa-dollar-sign"></i>REVENUE
         </router-link>
       </li>
       <li>
         <router-link to="/accounts" class="sidebar__nav-link">
-          <i class="fas fa-users"></i>Accounts
+          <i class="fas fa-users"></i>ACCOUNTS
         </router-link>
       </li>
       <li>
         <router-link to="/cdr" class="sidebar__nav-link">
-         <i class="fas fa-file-download"></i>CDRs
+         <i class="fas fa-file-download"></i>CDRS
         </router-link>
       </li>
       <li>
         <router-link to="/details" class="sidebar__nav-link">
-          <i class="fas fa-info-circle"></i>Details
+          <i class="fas fa-info-circle"></i>DETAILS
         </router-link>
       </li>
     </ul>

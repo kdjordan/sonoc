@@ -5,7 +5,7 @@ import Dashboard from './views/Dashboard.vue'
 import Accounts from './views/Accounts.vue'
 import Details from './views/Details.vue'
 import Cdr from './views/Cdr.vue'
-import Finance from './views/Finance.vue'
+import AddFunds from './views/AddFunds.vue'
 import Revenue from './views/Revenue.vue'
 import Usage from './views/Usage.vue'
 
@@ -31,9 +31,9 @@ export default new Router({
       component: Accounts
     },
     {
-      path: '/finance',
-      name: 'finance',
-      component: Finance
+      path: '/addfunds',
+      name: 'addfunds',
+      component: AddFunds
     },
     {
       path: '/details',
