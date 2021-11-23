@@ -14,9 +14,9 @@
           <center>OR</center>
         </div>
         <div class="finance__stripe">
-          <div class="finance__stripe--title">Use Secure CC via Stripe</div>
+          <div class="card__heading">Use Secure CC via Stripe</div>
           <input type="text" placeholder="Name on Card" />
-          <input type="text" placeholder="Card Information" />
+          <input type="text" placeholder="Card Number" />
           <div class="finance__stripe--lower">
             <input
               type="text"
@@ -45,6 +45,7 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/_layout.scss';
 @import '../styles/_card.scss';
+@import '../styles/_base.scss';
 //border: 1px solid red;
 .card {
   
@@ -64,7 +65,7 @@ export default {
   flex-direction: column;
 
   &__stripe {
-    margin: 4rem 0;
+    margin: 3rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -146,18 +147,5 @@ export default {
   }
 }
 
-h2 {
-  padding: 1rem 0;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  text-align: center;
-  color: var(--grey1);
-  margin-bottom: 3rem;
-}
 
-::placeholder {
-  color: var(--grey1);
-  font-family: inherit;
-  text-transform: uppercase;
-}
 </style>

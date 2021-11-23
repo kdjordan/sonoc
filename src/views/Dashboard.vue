@@ -6,25 +6,17 @@
           <div class="card__title">ACCOUNT DETAILS</div>
           <div class="card__wrapper">
             <div class="card__col flex-col">
-              <div>ACCOUNT NAME: XYZ TELECOM</div>
-              <div>BALANCE: $1232.56</div>
-              <div style="padding-bottom: 0.5rem; margin-left: 20%">
-                <u>SETTINGS</u>
-              </div>
-              <div>CPS LIMIT: 50</div>
-              <div>TOTAL PORTS: 200</div>
-              <div>
-                CURRENT RATES: <a href="//:dummy.csv">voip_int_11_21.csv</a>
-              </div>
+              <div class="card__heading">ACCOUNT NAME: <span class="card__entry">XYZ TELECOM</span></div>
+              <div class="card__heading">BALANCE: <span class="card__entry">$1232.56</span></div>
+              <div class="card__heading">CPS LIMIT:<span class="card__entry"> 50</span></div>
+              <div class="card__heading">TOTAL PORTS:<span class="card__entry"> 200</span></div>
+              <div class="card__heading">CURRENT RATES: <a href="//:dummy.csv">voip_int_11_21.csv</a></div>
             </div>
-            <div class="card__col card__col--right flex-col">
-              <div style="padding-bottom: 0.5rem; margin-left: 20%">
-                <u>CARRIER DETAILS</u>
-              </div>
-              <div>ACCOUNTING CONTACT: voip-acc@gmail.com</div>
-              <div>BUSINESS CONTACT: voip@gmail.com</div>
-              <div>RATES CONTACT: voip-rates@gmail.com</div>
-              <div>SUPPORT CONTACT: voip-support@gmail.com</div>
+            <div class="card__col  flex-col">
+              <div class="card__heading">ACCOUNTING CONTACT: <span class="card__entry">voip-acc@gmail.com</span></div>
+              <div class="card__heading">BUSINESS CONTACT: <span class="card__entry">voip@gmail.com</span></div>
+              <div class="card__heading">RATES CONTACT: <span class="card__entry">voip-rates@gmail.com</span></div>
+              <div class="card__heading">SUPPORT CONTACT: <span class="card__entry">voip-support@gmail.com</span></div>
             </div>
           </div>
         </div>
@@ -33,8 +25,8 @@
       <div class="dash__wrapper">
         <div class="card">
           <div class="card__title">PERFORMANCE</div>
-          <div class="card flex-row" style="justify-content: space-around">
-            <LineChart />
+          <div class="flex-row" style="justify-content: space-around; align-items:center;">
+            <LineChart style="margin-top: 1rem;"/>
             <PieChart />
           </div>
         </div>

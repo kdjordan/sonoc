@@ -1,5 +1,6 @@
 .card {
-    box-shadow: 0 0 2px 3px #d0d0d0;
+    
+    border: 2px solid var(--blue);
   
     &__wrapper {
       display: flex;
@@ -13,9 +14,22 @@
       text-align: center;
       font-size: 1.6rem;
     }
+
+    &__heading {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    &__entry {
+      font-weight: 400;
+      text-transform: none;
+      color: var(--grey2);
+    }
   
     &__col {
       width: 50%;
+      justify-content: space-between ;
   
       &--right {
         & div:not(:first-child) {

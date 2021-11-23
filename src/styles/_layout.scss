@@ -1,6 +1,7 @@
 .layout {
     display: grid;
     grid-template-columns: minmax(150px, 15%) 1fr;
+    max-width: 90em;
   }
 
   .flex-row {

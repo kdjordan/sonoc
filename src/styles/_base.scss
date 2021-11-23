@@ -33,4 +33,11 @@ ul {
 
 a {
   text-decoration: none;
+  font-weight: 400;
+}
+
+::placeholder {
+  color: var(--grey1);
+  font-family: inherit;
+  text-transform: uppercase;
 }

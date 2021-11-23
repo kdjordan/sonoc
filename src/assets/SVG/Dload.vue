@@ -21,7 +21,8 @@ export default {};
   margin-top: 1rem;
 }
 .cls-1 {
-  fill: #414042;
+  /* fill: #414042; */
+  fill: var(--blue);
 }
 .cls-2 {
   fill: #fff;

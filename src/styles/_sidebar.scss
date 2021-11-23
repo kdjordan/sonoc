@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: inset -1px 0px 0px 0px #dddddd;
+    // box-shadow: inset -1px 0px 0px 0px #dddddd;
+    border-right: 2px solid var(--blue);
     // background-color: var(--black3);
 
     &__logo {
