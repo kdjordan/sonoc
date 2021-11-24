@@ -17,7 +17,7 @@ export default {
       wrap: {
         chartOptions: {
           chart: {
-            type: 'line',
+            type: 'bar',
             id: 'All',
             toolbar: {
               show: false,
@@ -36,30 +36,17 @@ export default {
               },
             },
           },
-          // chartOptions: this.currentChart.chartOptions
         },
       },
     };
   },
-  // computed: {
-  //   doIt(){
-  //     console.log('somethign')
-  //     let obj = this.currentChart
-  //     const newObj = Object.assign(obj, this.wrap)
-  //     console.log(this.chart)
-  //     console.log(newObj)
-  //   }
-  // },
   computed: {
     ...mapState({
       currentChart: (state) => state.lineChart.data,
     }),
     doIt() {
-      console.log('somethign');
       let obj = this.currentChart;
       const newObj = Object.assign(obj, this.wrap);
-      console.log(this.chart);
-      console.log(newObj);
       return newObj
     },
   },
