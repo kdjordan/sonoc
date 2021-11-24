@@ -1,11 +1,5 @@
 module.exports = {
     chartOptions: {
-        chart: {
-          id: 'XYZ Telecom',
-          toolbar: {
-            show: false,
-          },
-        },
         xaxis: {
           categories: [
             'Jan',

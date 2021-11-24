@@ -1,6 +1,10 @@
 <template>
   <div class="chart">
-    <apexchart type="line" :options="currentChart.chartOptions" :series="currentChart.series"> </apexchart>
+    <apexchart
+      :options="doIt.chartOptions"
+      :series="doIt.series"
+    >
+    </apexchart>
   </div>
 </template>
 
@@ -8,18 +12,58 @@
 import { mapState } from 'vuex';
 
 export default {
-  computed: {
-      ...mapState({
-        currentChart: state => state.lineChart.data
-        })
+  data() {
+    return {
+      wrap: {
+        chartOptions: {
+          chart: {
+            type: 'line',
+            id: 'All',
+            toolbar: {
+              show: false,
+            },
+            animations: {
+              enabled: true,
+              easing: 'easeinout',
+              speed: 300,
+              animateGradually: {
+                enabled: true,
+                delay: 75,
+              },
+              dynamicAnimation: {
+                enabled: true,
+                speed: 100,
+              },
+            },
+          },
+          // chartOptions: this.currentChart.chartOptions
+        },
+      },
+    };
   },
-  methods: {
-    updateData() {
-      let chart;
-      // chart = this.getData()
+  // computed: {
+  //   doIt(){
+  //     console.log('somethign')
+  //     let obj = this.currentChart
+  //     const newObj = Object.assign(obj, this.wrap)
+  //     console.log(this.chart)
+  //     console.log(newObj)
+  //   }
+  // },
+  computed: {
+    ...mapState({
+      currentChart: (state) => state.lineChart.data,
+    }),
+    doIt() {
+      console.log('somethign');
+      let obj = this.currentChart;
+      const newObj = Object.assign(obj, this.wrap);
+      console.log(this.chart);
+      console.log(newObj);
+      return newObj
     },
   },
-  async mounted() {
+  async created() {
     await this.$store.dispatch('lineChart/fetchData', 1);
   },
 };
