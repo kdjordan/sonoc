@@ -50,7 +50,7 @@ export default {
 .card {
   
   &__wrapper {
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -59,7 +59,7 @@ export default {
 }
 
 .finance {
-  margin-top: 10%;
+  margin-top: 5%;
   align-items: center;
   display: flex;
   flex-direction: column;

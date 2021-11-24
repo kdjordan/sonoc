@@ -1,58 +1,61 @@
 .sidebar {
-    min-height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // box-shadow: inset -1px 0px 0px 0px #dddddd;
+  border-right: 2px solid var(--blue);
+  // background-color: var(--black3);
+
+  &__logo {
+    width: 100%;
+    margin: 0 auto;
+    &--logo {
+      align-self: flex-start;
+      width: 50%;
+      margin: 0 auto;
+      padding-bottom: 5%;
+      border: none !important;
+    }
+  }
+
+  &__nav {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    cursor: pointer;
+    margin: 0;
+    background-color: var(--blue);
+    border-bottom: 2px solid var(-- blue);
+    border-top: 2px solid white;
+  }
+
+  &__nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.8445rem 1rem;
+    transition: all 0.3s ease;
+    display: flex;
     align-items: center;
-    // box-shadow: inset -1px 0px 0px 0px #dddddd;
-    border-right: 2px solid var(--blue);
-    // background-color: var(--black3);
+    width: 100%;
 
-    &__logo {
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        margin: 2rem 0;
-
-        &--logo {
-            width: 50%; 
-            margin: 0 auto; 
-        }
+    & svg {
+      margin-right: 1rem;
     }
 
-    &__nav {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        cursor: pointer;
-
+    &:hover {
+    //   background-color: var(--blue);
+      background-color: white;
+      color: var(--blue);
     }
-
-    &__nav-link {
-        color: var(--black);
-        text-decoration: none;
-        padding: 0.8445rem 1rem;
-        transition: all .3s ease;
-        display: flex;
-        align-items: center;
-        width: 100%;
-
-        & svg {
-            margin-right: 1rem;
-        }
-
-        &:hover {
-            background-color:var(--blue);
-            color: white;
-        }
-    }
+  }
 }
 
 i {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .router-link-exact-active {
-    background-color:var(--blue);
-    color: white;
+  background-color: white;
+  color: var(--blue);
 }
-

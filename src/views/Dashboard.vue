@@ -54,7 +54,7 @@ export default {
 @import '../styles/_card.scss';
 
 .dash {
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
   align-content: center;

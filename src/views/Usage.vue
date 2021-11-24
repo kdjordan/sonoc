@@ -41,10 +41,10 @@ export default {
 .view {
   width: 78%;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
 }
 .chart {
   & h2 {

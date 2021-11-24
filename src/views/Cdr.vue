@@ -54,7 +54,7 @@ export default {
 .view {
   width: 80%;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .cdr {

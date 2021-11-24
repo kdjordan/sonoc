@@ -1,10 +1,6 @@
 <template>
   <div class="chart">
-    <apexchart
-      :options="doIt.chartOptions"
-      :series="doIt.series"
-    >
-    </apexchart>
+    <apexchart :options="doIt.chartOptions" :series="doIt.series"> </apexchart>
   </div>
 </template>
 
@@ -36,6 +32,22 @@ export default {
               },
             },
           },
+          xaxis: {
+            categories: [
+              'Jan',
+              'Feb',
+              'Mar',
+              'Apr',
+              'May',
+              'Jun',
+              'Jul',
+              'Aug',
+              'Sep',
+              'Oct',
+              'Nov',
+              'Dec',
+            ],
+          },
         },
       },
     };
@@ -47,7 +59,7 @@ export default {
     doIt() {
       let obj = this.currentChart;
       const newObj = Object.assign(obj, this.wrap);
-      return newObj
+      return newObj;
     },
   },
   async created() {

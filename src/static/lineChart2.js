@@ -1,22 +1,4 @@
 module.exports = {
-    chartOptions: {
-        xaxis: {
-          categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
-          ],
-        },
-    },
       series: [
         {
           name: 'CPS',

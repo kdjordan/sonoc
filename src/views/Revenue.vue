@@ -24,7 +24,7 @@ export default {
 .view {
   width: 78%;
   margin: 0 auto;
-  margin-top: 8%;
+  margin-top: 5%;
 }
 .chart {
   & h2 {

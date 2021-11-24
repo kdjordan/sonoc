@@ -2,6 +2,7 @@
   <div class="sidebar">
     <div class="sidebar__logo">
       <Logo  class="sidebar__logo--logo" />
+      <div class="card__title" style="font-size: 1.4rem;padding: 10px 0;">CUSTOMER PORTAL</div>
     </div>
     <ul class="sidebar__nav">
       <li>
@@ -34,11 +35,11 @@
          <i class="fas fa-file-download"></i>CDRS
         </router-link>
       </li>
-      <li>
+      <!-- <li>
         <router-link to="/details" class="sidebar__nav-link">
           <i class="fas fa-info-circle"></i>DETAILS
         </router-link>
-      </li>
+      </li> -->
     </ul>
   </div>
 </template>
@@ -55,4 +56,5 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../styles/_sidebar.scss';
+@import '../../styles/_card.scss';
 </style>

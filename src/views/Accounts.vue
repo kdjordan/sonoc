@@ -76,6 +76,7 @@
           </tr>
         </tbody>
       </table>
+      <button class="card__title button__add">+ Add new Account</button>
     </div>
   </div>
 </template>
@@ -96,7 +97,7 @@ export default {
 .accounts {
   width: 90%;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 5%;
 
 &-table {
   font-family: inherit;
@@ -112,8 +113,32 @@ export default {
   }
 }
 }
+.button__add {
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  padding: 4px 5px;
+  float: right;
+  border: 2px solid var(--blue);
+  transition: all .3s ease;
+
+  &:hover {
+    background-color: white;
+    color: var(--blue);
+  }
+}
 
 .edit-cell {
   justify-content: space-evenly;
 }
+
+i {
+  cursor: pointer;
+  transition: all .3s ease;
+
+  &:hover {
+    transform: scale(2);
+  }
+}
+
 </style>
