@@ -19,7 +19,7 @@ export default {
         enabled: true,
       },
       chart: {
-        type: 'donut',
+        type: 'pie',
       },
 
       labels: [

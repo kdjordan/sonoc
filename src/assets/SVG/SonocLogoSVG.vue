@@ -49,9 +49,9 @@
           points="45.2,14.8 37.1,14.8 17.2,77.8 25.7,77.8 	"
         />
       </g>
-      <text transform="matrix(1.25 0 0 1 16.7825 110.4302)" class="st1 st3 st4">
+      <!-- <text transform="matrix(1.25 0 0 1 16.7825 110.4302)" class="st1 st3 st4">
         SONOC
-      </text>
+      </text> -->
     </svg>
   </div>
 </template>

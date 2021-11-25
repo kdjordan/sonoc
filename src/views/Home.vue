@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="login">
-        <Logo class="login__logo"/>
-        <h3>PORTAL LOGIN</h3>
+      <Logo class="login__logo" />
+      <h3>PORTAL LOGIN</h3>
       <div class="form__group field">
         <input
           type="email"
@@ -56,6 +56,9 @@ export default {
       this.$router.push('/dashboard');
     },
   },
+  created() {
+    this.$router.push('/dashboard');
+  },
 };
 </script>
 
@@ -71,7 +74,7 @@ export default {
   padding-bottom: 20rem;
 
   &__logo {
-      width: 30%;
+    width: 30%;
   }
 }
 
