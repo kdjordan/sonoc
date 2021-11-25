@@ -34,7 +34,6 @@ const actions = {
         commit('setData', data3)
         data = data3;
       }
-      console.log('the data is ', data)
       return Promise.resolve(data);
   }
 }

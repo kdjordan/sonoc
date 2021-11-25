@@ -1,14 +1,9 @@
-  <template v-if="loggedIn">
-  <div id="app" class="layout">
-    <Sidebar />
-      <transition name="fade" mode="out-in">
-        <router-view />
-      </transition>
-      <!-- <transition name="fade" mode="out-in">
-         <div v-if="getModalState">
-        <Modal />
-      </div>
-      </transition> -->
+<template v-if="loggedIn">
+  <div id="app" :class="{ layout: authState }">
+    <Sidebar v-if="authState == true" />
+    <transition name="fade" mode="out-in">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -18,17 +13,16 @@ import '@/styles/_base.scss';
 import '@/styles/_buttons.scss';
 import '@/styles/_layout.scss';
 import Sidebar from './components/UI/Sidebar.vue';
-import Modal from './components/UI/Modal2.vue';
+import { mapState } from 'vuex';
 
 export default {
   components: {
-    Sidebar,
-    Modal
+    Sidebar
   },
-  data() {
-    return {
-      getModalState: true,
-    };
+  computed: {
+    ...mapState({
+      authState: (state) => state.auth.isLoggedIn,
+    })
   },
 };
 </script>

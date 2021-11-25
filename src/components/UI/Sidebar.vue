@@ -1,8 +1,13 @@
 <template>
   <div class="sidebar">
     <div class="sidebar__logo">
-      <Logo  class="sidebar__logo--logo" />
-      <div class="card__title" style="font-size: 1.4rem;padding: 10px 0;">CUSTOMER PORTAL</div>
+      <router-link to="/" class="sidebar__nav-link" @click.native="logout">
+        <Logo class="sidebar__logo--logo" />
+      </router-link>
+
+      <div class="card__title" style="font-size: 1.4rem; padding: 10px 0">
+        CUSTOMER PORTAL
+      </div>
     </div>
     <ul class="sidebar__nav">
       <li>
@@ -12,17 +17,17 @@
       </li>
       <li>
         <router-link to="/addfunds" class="sidebar__nav-link">
-         <i class="fas fa-university"></i>ADD FUNDS
+          <i class="fas fa-university"></i>ADD FUNDS
         </router-link>
       </li>
       <li>
         <router-link to="/usage" class="sidebar__nav-link">
-        <i class="fas fa-chart-bar"></i>USAGE
+          <i class="fas fa-chart-bar"></i>USAGE
         </router-link>
       </li>
       <li>
         <router-link to="/revenue" class="sidebar__nav-link">
-         <i class="fas fa-dollar-sign"></i>REVENUE
+          <i class="fas fa-dollar-sign"></i>REVENUE
         </router-link>
       </li>
       <li>
@@ -32,7 +37,7 @@
       </li>
       <li>
         <router-link to="/cdr" class="sidebar__nav-link">
-         <i class="fas fa-file-download"></i>CDRS
+          <i class="fas fa-file-download"></i>CDRS
         </router-link>
       </li>
       <!-- <li>
@@ -50,6 +55,13 @@ import Logo from '@/assets/SVG/SonocLogoSVG';
 export default {
   components: {
     Logo,
+  },
+  methods: {
+    async logout() {
+      await this.$store.commit('auth/toggleAuth', false)
+      // this.$router.push('/')
+
+    },
   },
 };
 </script>

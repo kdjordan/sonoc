@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="login">
+      <div>
       <Logo class="login__logo" />
-      <h3>PORTAL LOGIN</h3>
+      </div>
+      <h3>SONOC PORTAL LOGIN</h3>
       <div class="form__group field">
         <input
           type="email"
@@ -26,13 +28,7 @@
           required
         />
       </div>
-      <button
-        @click="submit"
-        class="btn btn__primary"
-        style="margin-top: 1.5rem"
-      >
-        LOGIN
-      </button>
+      <button @click="submit" class="button__add">LOGIN</button>
     </div>
   </div>
 </template>
@@ -51,21 +47,43 @@ export default {
     Logo,
   },
   methods: {
-    submit() {
-      console.log(`submitted ${this.username}`);
+    async submit() {
+      await this.$store.commit('auth/toggleAuth', true);
       this.$router.push('/dashboard');
     },
-  },
-  created() {
-    this.$router.push('/dashboard');
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/_login.scss';
+@import '../styles/_form.scss';
+
+.button__add {
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 30%;
+  margin-top: 3rem;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  border: 2px solid var(--blue);
+  background-color: var(--blue);
+  color: white;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: white;
+    color: var(--blue);
+  }
+}
+.wrapper {
+  max-width: 50%;
+  margin: 0 auto;
+  height: 100%;
+  // border: 1px solid red;
+}
 
 .login {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,11 +92,13 @@ export default {
   padding-bottom: 20rem;
 
   &__logo {
-    width: 30%;
+    width: 10rem;
+    height: auto;
   }
+
 }
 
 h3 {
-  color: var(--black3);
+  color: var(--blue);
 }
 </style>

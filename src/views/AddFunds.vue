@@ -2,30 +2,88 @@
   <div class="layout finance">
     <div class="card">
       <div class="card__title">ADD FUNDS</div>
+
       <div class="card__wrapper">
-        <button class="paypal-button">
-          <span class="paypal-button-title"> ADD FUNDS WITH</span>
-          <span class="paypal-logo"> <i>Pay</i><i>Pal</i> </span>
-        </button>
-        <div
-          class="paypal-button-title"
-          style="margin-top: 1rem; font-size: 1.5rem; margin-top: 3rem"
-        >
-          <center>OR</center>
-        </div>
-        <div class="finance__stripe">
-          <div class="card__heading">Use Secure CC via Stripe</div>
-          <input type="text" placeholder="Name on Card" />
-          <input type="text" placeholder="Card Number" />
-          <div class="finance__stripe--lower">
+        <div class="form__group field">
+          <button class="paypal-button">
+            <span class="paypal-button-title"> ADD FUNDS WITH</span>
+            <span class="paypal-logo"> <i>Pay</i><i>Pal</i> </span>
+          </button>
+          <div
+            class="paypal-button-title"
+            style="margin-top: 1rem; font-size: 1.5rem; margin-top: 3rem"
+          >
+            <center>OR</center>
+          </div>
+          <div class="finance__stripe">
+            <div class="card__heading">Use Secure CC via Stripe</div>
+            <!-- <input type="text" placeholder="Name on Card" /> -->
             <input
               type="text"
-              placeholder="Expiration Date"
-              style="width: 70%"
+              v-model="cardname"
+              class="form__field"
+              cardname="cardname"
+              id="cardname"
+              name="cardname"
+              placeholder="Name on Card"
+              required
             />
-            <input type="text" placeholder="CCV" style="width: 30%" />
+            <input
+              type="text"
+              v-model="cardnumber"
+              class="form__field"
+              cardnumber="cardnumber"
+              id="cardnumber"
+              name="cardnumber"
+              placeholder="Card Number"
+              required
+            />
+            <div class="finance__stripe--lower">
+              <input
+              type="text"
+              v-model="expirationdate"
+              class="form__field"
+              expirationdate="expirationdate"
+              id="expirationdate"
+              name="expirationdate"
+              placeholder="Expiration Date"
+              required
+            />
+              <input
+              type="text"
+              v-model="ccv"
+              class="form__field"
+              ccv="ccv"
+              id="ccv"
+              name="ccv"
+              placeholder="ccv"
+              required
+            />
+              <!-- <input
+              type="text"
+              v-model="expirationdate"
+              class="form__field"
+              expirationdate="expirationdate"
+              id="expirationdate"
+              name="expirationdate"
+              placeholder="Expiration Date"
+              required
+            />
+              <input
+              type="text"
+              v-model="cardnumber"
+              class="form__field"
+              cardnumber="cardnumber"
+              id="cardnumber"
+              name="cardnumber"
+              placeholder="Card Number"
+              required
+            />
+              
+              <input type="text" placeholder="CCV" style="width: 30%" /> -->
+            </div>
+            <button>SUBMIT</button>
           </div>
-          <button>SUBMIT</button>
         </div>
       </div>
     </div>
@@ -33,11 +91,16 @@
 </template>
 
 <script>
-import Sidebar from '@/components/UI/Sidebar';
-
 export default {
-  components: {
-    Sidebar,
+  data() {
+    return {
+      username: '',
+      password: '',
+      cardname: '',
+      cardnumber: '',
+      expirationdate: '',
+      ccv: ''
+    };
   },
 };
 </script>
@@ -46,9 +109,9 @@ export default {
 @import '../styles/_layout.scss';
 @import '../styles/_card.scss';
 @import '../styles/_base.scss';
+@import '../styles/_form.scss';
 //border: 1px solid red;
 .card {
-  
   &__wrapper {
     margin-top: 5%;
     display: flex;
@@ -146,6 +209,4 @@ export default {
     }
   }
 }
-
-
 </style>
