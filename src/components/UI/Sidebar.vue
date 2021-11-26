@@ -5,7 +5,7 @@
         <Logo class="sidebar__logo--logo" />
       </router-link>
 
-      <div style="font-size: 1.2rem;background-color: var(--blue); color: white; text-align:center;padding: .8rem 0;">
+      <div class="sidebar__logo--title">
         SONOC CUSTOMER PORTAL
       </div>
     </div>

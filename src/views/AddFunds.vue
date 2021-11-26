@@ -39,48 +39,30 @@
               required
             />
             <div class="finance__stripe--lower">
-              <input
-              type="text"
-              v-model="expirationdate"
-              class="form__field"
-              expirationdate="expirationdate"
-              id="expirationdate"
-              name="expirationdate"
-              placeholder="Expiration Date"
-              required
-            />
-              <input
-              type="text"
-              v-model="ccv"
-              class="form__field"
-              ccv="ccv"
-              id="ccv"
-              name="ccv"
-              placeholder="ccv"
-              required
-            />
-              <!-- <input
-              type="text"
-              v-model="expirationdate"
-              class="form__field"
-              expirationdate="expirationdate"
-              id="expirationdate"
-              name="expirationdate"
-              placeholder="Expiration Date"
-              required
-            />
-              <input
-              type="text"
-              v-model="cardnumber"
-              class="form__field"
-              cardnumber="cardnumber"
-              id="cardnumber"
-              name="cardnumber"
-              placeholder="Card Number"
-              required
-            />
-              
-              <input type="text" placeholder="CCV" style="width: 30%" /> -->
+              <div>
+                <input
+                  type="text"
+                  v-model="expirationdate"
+                  class="form__field"
+                  expirationdate="expirationdate"
+                  id="expirationdate"
+                  name="expirationdate"
+                  placeholder="Expiration Date"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  v-model="ccv"
+                  class="form__field"
+                  ccv="ccv"
+                  id="ccv"
+                  name="ccv"
+                  placeholder="ccv"
+                  required
+                />
+              </div>
             </div>
             <button>SUBMIT</button>
           </div>
@@ -99,7 +81,7 @@ export default {
       cardname: '',
       cardnumber: '',
       expirationdate: '',
-      ccv: ''
+      ccv: '',
     };
   },
 };
@@ -142,11 +124,8 @@ export default {
     &--lower {
       display: flex;
       justify-content: space-between;
-      width: 80%;
-
-      & [input]:first-of-type {
-        width: 60%;
-      }
+      width: 100%;
+      gap: 1rem;
     }
 
     & button {
@@ -209,4 +188,10 @@ export default {
     }
   }
 }
+
+input[type='text'] {
+  margin: 0.5rem 0;
+  min-width: 100%;
+}
+
 </style>

@@ -1,9 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="login">
-      <div>
         <Logo class="login__logo" />
-      </div>
       <h3>SONOC PORTAL LOGIN</h3>
       <div class="form__group field">
         <input
@@ -84,18 +82,21 @@ export default {
 .wrapper {
   max-width: 50%;
   margin: 0 auto;
-  height: 100%;
-  // border: 1px solid red;
+  min-height: 100vh;
+  // display: flex;
+  // justify-content: center;
+  
 }
 
 .login {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding-bottom: 20rem;
+  
 
   &__logo {
     width: 10rem;
