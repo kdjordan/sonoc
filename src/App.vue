@@ -17,12 +17,12 @@ import { mapState } from 'vuex';
 
 export default {
   components: {
-    Sidebar
+    Sidebar,
   },
   computed: {
     ...mapState({
       authState: (state) => state.auth.isLoggedIn,
-    })
+    }),
   },
 };
 </script>

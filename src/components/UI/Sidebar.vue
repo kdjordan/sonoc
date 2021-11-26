@@ -30,7 +30,7 @@
           <i class="fas fa-dollar-sign"></i>REVENUE
         </router-link>
       </li>
-      <li>
+      <li v-if="accountType == 1">
         <router-link to="/accounts" class="sidebar__nav-link">
           <i class="fas fa-users"></i>ACCOUNTS
         </router-link>
@@ -51,14 +51,20 @@
 
 <script>
 import Logo from '@/assets/SVG/SonocLogoSVG';
+import { mapState } from 'vuex';
 
 export default {
   components: {
     Logo,
   },
+  computed: {
+    ...mapState({
+      accountType: (state) => state.auth.accountType
+    })
+  },
   methods: {
     async logout() {
-      await this.$store.commit('auth/toggleAuth', false)
+      await this.$store.commit('auth/fullLogOut')
       // this.$router.push('/')
 
     },

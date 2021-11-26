@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="login">
       <div>
-      <Logo class="login__logo" />
+        <Logo class="login__logo" />
       </div>
       <h3>SONOC PORTAL LOGIN</h3>
       <div class="form__group field">
@@ -29,6 +29,10 @@
         />
       </div>
       <button @click="submit" class="button__add">LOGIN</button>
+      <select v-model="accountType" style="margin-top:2rem;">
+        <option value="1" default>Account Owner</option>
+        <option value="2">Account User</option>
+      </select>
     </div>
   </div>
 </template>
@@ -41,6 +45,7 @@ export default {
     return {
       username: '',
       password: '',
+      accountType: 1,
     };
   },
   components: {
@@ -49,6 +54,7 @@ export default {
   methods: {
     async submit() {
       await this.$store.commit('auth/toggleAuth', true);
+      await this.$store.commit('auth/setAccountType', this.accountType);
       this.$router.push('/dashboard');
     },
   },
@@ -95,7 +101,18 @@ export default {
     width: 10rem;
     height: auto;
   }
-
+}
+select {
+  background-color: var(--blue);
+  color: white;
+  padding: 0.5rem;
+  width: 10rem;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
 }
 
 h3 {

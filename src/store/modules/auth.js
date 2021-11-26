@@ -1,7 +1,7 @@
 // initial state
 const state = () => ({
-  isLoggedIn: true,
-  accountType: 0, //1 owner :: 2 : customer :: 0 : default: undefined
+  isLoggedIn: false,
+  accountType: 1, //1 owner :: 2 : customer :: 0 : default: undefined
 })
 
 // getters
@@ -23,8 +23,11 @@ const mutations = {
     state.accountType = payload;
   },
   toggleAuth(state, payload) {
-      console.log('toggling', payload)
       state.isLoggedIn = payload;
+  },
+  fullLogOut(state) {
+    state.isLoggedIn = false
+    state.accountType = 0
   }
 }
 
