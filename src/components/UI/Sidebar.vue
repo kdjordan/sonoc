@@ -5,8 +5,8 @@
         <Logo class="sidebar__logo--logo" />
       </router-link>
 
-      <div class="card__title" style="font-size: 1.4rem; padding: 10px 0">
-        CUSTOMER PORTAL
+      <div style="font-size: 1.2rem;background-color: var(--blue); color: white; text-align:center;padding: .8rem 0;">
+        SONOC CUSTOMER PORTAL
       </div>
     </div>
     <ul class="sidebar__nav">
