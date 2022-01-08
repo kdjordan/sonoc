@@ -2,12 +2,12 @@
   <div class="accounts">
     <div class="card">
       <div class="card__title">YOUR CUSTOMER ACCOUNTS</div>
-      <div v-if="isActive" class="modal card" :class="{active: isActive}">
+      <div v-if="addNewAccountActive" class="modal card" :class="{active: addNewAccountActive}">
           <h2 class="card__heading"><center>ADD NEW ACCOUNT</center></h2>
           <div class="form__group field">
             <input
               type="text"
-              v-model="newAccount.number"
+              v-model="newAccount.name"
               class="form__field"
               id="number"
               name="name"
@@ -57,33 +57,63 @@
         <thead>
           <tr>
             <td class="card__heading">ACCOUNT NUMBER</td>
-            <td class="card__heading">LOGIN EMAIL</td>
-            <td class="card__heading">DATE ADDED</td>
+            <td class="card__heading">ACCOUNT NAME</td>
             <td class="card__heading">ACTIVE</td>
+            <td class="card__heading">LOGIN EMAIL</td>
             <td class="card__heading">PASSWORD</td>
+            <td class="card__heading">DATE ADDED</td>
             <td class="card__heading">ACTIONS</td>
           </tr>
         </thead>
         <tbody>
           <tr v-for="account in accounts" :key="account.number">
             <td>{{account.number}}</td>
-            <td>{{account.email}}</td>
+            <td>{{account.name}}</td>
+            <td v-if="editAccountActive && account.number == editAccount.number">
+              <label class="switch">
+                <input type="checkbox" @click="toggleAccountActive" :checked="editAccount.accIsActive" :disabled="!editAccountActive">
+                <span class="slider round"></span>
+              </label>
+            </td>
+            <td v-else>
+              <label class="switch">
+                <input type="checkbox" :checked="account.accIsActive" disabled>
+                <span class="slider round"></span>
+              </label>
+            </td>
+            <td v-if="editAccountActive && account.number == editAccount.number">
+               <input
+                type="email"
+                v-model="editAccount.email"
+                class="form__field"
+                required
+                />
+            </td>
+            <td v-else>{{account.email}}</td>
+            <td v-if="editAccountActive && account.number == editAccount.number">
+               <input
+                type="text"
+                v-model="editAccount.password"
+                class="form__field"
+                required
+                />
+            </td>
+            <td v-else>******</td>
             <td>{{account.addedDate}}</td>
-            <td :class="{accIsActive: !account.accIsActive}" class="accActiveTrue">{{account.accIsActive}}</td>
-            <td>******</td>
             <td class="flex-row edit-cell">
-              <i class="fas fa-pencil-alt" style="color: var(--blue)"></i>
-              <i class="fas fa-save" style="color: var(--green)"></i>
-              <i class="fas fa-minus-circle" style="color: red"></i>
+              <i class="fas fa-pencil-alt" style="color: var(--blue)" @click="editAcc(account.number)"></i>
+              <i class="fas fa-save" style="color: var(--green)" @click="saveEditAcc(account.number)"></i>
+              <i class="fas fa-minus-circle" style="color: red" @submit="deleteAcc(account.number)"></i>
             </td>
           </tr>
         </tbody>
         
       </table>
-      <button v-if="!isActive" :class="{active: isActive}" class="card__title button__add" @click="toggleModal">+ Add new Account</button>
-      <button v-else class="card__title button__add" @click="toggleModal">X Cancel</button>
+      <!-- <button v-if="!addNewAccountActive" :class="{active: addNewAccountActive}" class="card__title button__add" @click="toggleModal">+ Add new Account</button>
+      <button v-else class="card__title button__add" @click="toggleModal">X Cancel</button> -->
     </div>
-    
+    {{accounts}}<br /><br />
+    {{editAccount}}
   </div>
 </template>
 
@@ -93,22 +123,53 @@ import accounts from '@/static/accounts.js';
 export default {
   data() {
     return {
-      accounts : {},
-      isActive : false,
+      accounts : [],
+      addNewAccountActive : false,
+      editAccountActive: false,
       newAccount: {
-        number: '',
+        number: null,
         name: '',
-        emaidl: '',
-        password: ''
-      }
+        email: '',
+        password: '',
+        addedDate: '',
+        accIsActive: true
+      },
+      editAccount: {}
     }
   },
   methods: {
     toggleModal() {
-      this.isActive = !this.isActive
+      this.addNewAccountActive = !this.addNewAccountActive
     },
     submitNewAccount() {
-
+      let date = new Date()
+      this.newAccount.addedDate = `${date.getFullYear()} ${date.getMonth()+1} ${date.getDay()}`
+      console.log(this.newAccount)
+      this.accounts.push(this.newAccount)
+      this.toggleModal()
+    },
+    editAcc(num) {
+      this.editAccountActive = !this.editAccountActive
+      let theAccount = accounts.filter((acc)=> {
+        return acc.number === num
+      })
+      this.editAccount = theAccount[0]
+    },
+    saveEditAcc(num) {
+      this.editAccountActive = false
+      this.accounts = this.accounts.map((obj) => {
+        if (obj.number === num) {
+          return {...obj, email: this.editAccount.email, password: this.editAccount.email, accIsActive: this.editAccount.accIsActive};
+        } 
+          return obj
+      })
+      this.editAccount = {}
+    },
+    deleteAcc(num) {
+      alert(`Are you sure ??`)
+    },
+    toggleAccountActive() {
+      this.editAccount.accIsActive = !this.editAccount.accIsActive
     }
   },
   components: {
@@ -124,6 +185,8 @@ export default {
 @import '../styles/_base.scss';
 @import '../styles/_card.scss';
 @import '../styles/_form.scss';
+@import '../styles/_toggle.scss';
+
 .flex-col {
   padding: 1rem 0;
   display: flex;

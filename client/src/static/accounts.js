@@ -3,7 +3,7 @@ module.exports = [
     'number' : 2233,
     'name' : 'XYZ Telecom',
     'email' : 'xyz@gmail.com',
-    'password' : 'login123',
+    'password' : 'login456',
     'addedDate' : '2021/2/25',
     "accIsActive" : true
     },
@@ -19,7 +19,7 @@ module.exports = [
     'number' : 3344,
     'name' : 'Terrific Telecom',
     'email' : 'terrifictelecom@gmail.com',
-    'password' : 'login123',
+    'password' : 'login789',
     'addedDate' : '2021/2/25',
     "accIsActive" : true
     }
