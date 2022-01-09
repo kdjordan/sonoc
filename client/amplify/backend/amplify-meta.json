@@ -21,7 +21,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-sonocpro-dev-193015-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
         "logicalId": "hostingamplifyhosting"
       },
-      "lastPushTimeStamp": "2021-11-26T04:02:12.741Z",
+      "lastPushTimeStamp": "2022-01-09T18:52:52.328Z",
       "output": {},
       "lastPushDirHash": "TcW1ZigAph9OUv5Cak+UsIzYxtk="
     }

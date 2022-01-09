@@ -20,7 +20,6 @@
               type="text"
               v-model="newAccount.name"
               class="form__field"
-              
               id="name"
               name="name"
               placeholder="Account Name"
@@ -52,6 +51,17 @@
           <div>
             <button class="modal__button" @click="submitNewAccount">SUBMIT</button>
           </div>
+      </div>
+      <div v-if="deleteAccountActive" class="modal__deleteAccount" :class="{active: deleteAccountActive}">
+        <div>
+          Are you sure you want to delete account {{deleteAccountNumber}} ?
+          <br />
+          <br />
+        </div>
+        <div class="modal__deleteAccount--btn-container">
+          <button class="modal__deleteAccount--btn-container--remove" @click="confirmDelete()">DELETE</button>
+          <button class="modal__deleteAccount--btn-container--cancel" @click="cancelDelete()">CANCEL</button>
+        </div>
       </div>
       <table v-else class="accounts-table">
         <thead>
@@ -103,7 +113,7 @@
             <td class="flex-row edit-cell">
               <i class="fas fa-pencil-alt" style="color: var(--blue)" @click="editAcc(account.number)"></i>
               <i class="fas fa-save" style="color: var(--green)" @click="saveEditAcc(account.number)"></i>
-              <i class="fas fa-minus-circle" style="color: red" @submit="deleteAcc(account.number)"></i>
+              <!-- <i class="fas fa-minus-circle" style="color: red" @click="deleteAcc(account.number)"></i> -->
             </td>
           </tr>
         </tbody>
@@ -112,8 +122,8 @@
       <!-- <button v-if="!addNewAccountActive" :class="{active: addNewAccountActive}" class="card__title button__add" @click="toggleModal">+ Add new Account</button>
       <button v-else class="card__title button__add" @click="toggleModal">X Cancel</button> -->
     </div>
-    {{accounts}}<br /><br />
-    {{editAccount}}
+    <!-- {{accounts}}<br /><br />
+    {{editAccount}} -->
   </div>
 </template>
 
@@ -126,6 +136,8 @@ export default {
       accounts : [],
       addNewAccountActive : false,
       editAccountActive: false,
+      deleteAccountActive: false,
+      deleteAccountNumber: null,
       newAccount: {
         number: null,
         name: '',
@@ -166,7 +178,15 @@ export default {
       this.editAccount = {}
     },
     deleteAcc(num) {
-      alert(`Are you sure ??`)
+      this.deleteAccountActive = !this.deleteAccountActive
+      this.deleteAccountNumber = num
+    },
+    confirmDelete() {
+
+    },
+    cancelDelete() {
+      this.deleteAccountActive = !this.deleteAccountActive
+      this.deleteAccountNumber = null
     },
     toggleAccountActive() {
       this.editAccount.accIsActive = !this.editAccount.accIsActive
@@ -208,6 +228,36 @@ export default {
 .modal {
   padding: 1rem;
 
+  &__deleteAccount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+    padding: 1rem;
+
+    &--btn-container {
+      display: flex;
+      justify-content: space-between;
+      width: 70%;
+      padding: .2rem;
+
+      & button {
+        color: white;
+        padding: .3rem .5rem;
+        cursor: pointer;
+      }
+
+      &--remove {
+        background-color: red;
+      }
+
+      &--cancel {
+        background-color: var(--blue);
+      }
+    }
+
+  }
   &__button {
     width : 100%;
     margin-top: .8rem;
