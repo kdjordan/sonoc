@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Home2 from './views/Home2.vue'
 import Dashboard from './views/Dashboard.vue'
 import Accounts from './views/Accounts.vue'
 import Details from './views/Details.vue'
@@ -19,6 +20,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/home2',
+      name: 'home2',
+      component: Home2
     },
     {
       path: '/dashboard',

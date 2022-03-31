@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!$auth.loading">
+  <div v-if="!$auth.loading" class="login">
     <button @click="login" v-if="!$auth.isAuthenticated">
       Login
     </button>
@@ -24,10 +24,19 @@ export default {
     this.$auth.loginWithPopup(); 
   }, 
   logout() { 
-  this.$auth.logout(); 
-  this.$router.push({ path: '/' }); 
-}
-}
+    this.$auth.logout(); 
+    this.$router.push({ path: '/' }); 
+  }
+  }
 }
 
 </script>
+
+<style lang="scss" scoped>
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+</style>

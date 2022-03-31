@@ -32,6 +32,9 @@
         <option value="2">Account User</option>
       </select>
     </div>
+     <button @click="logout" v-if="$auth.isAuthenticated">
+  Logout
+  </button>
   </div>
 </template>
 
@@ -55,6 +58,10 @@ export default {
       await this.$store.commit('auth/setAccountType', this.accountType);
       this.$router.push('/dashboard');
     },
+    logout() { 
+      this.$auth.logout(); 
+      this.$router.push({ path: '/' }); 
+    }
   },
 };
 </script>
