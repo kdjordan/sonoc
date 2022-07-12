@@ -9,6 +9,7 @@ import Cdr from './views/Cdr.vue'
 import AddFunds from './views/AddFunds.vue'
 import Revenue from './views/Revenue.vue'
 import Usage from './views/Usage.vue'
+import APICheck from './views/APICheck.vue'
 
 Vue.use(Router)
 
@@ -18,13 +19,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/home2',
       name: 'home2',
       component: Home2
+    },
+    // {
+    //   path: '/home2',
+    //   name: 'home2',
+    //   component: Home2
+    // },
+    {
+      path: '/APICheck',
+      name: 'APICheck',
+      component: APICheck
     },
     {
       path: '/dashboard',

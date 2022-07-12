@@ -1,5 +1,5 @@
 # sonoc-pro
-
+Vuejs Client project :: cutomer portal
 ## Project setup
 ```
 npm install

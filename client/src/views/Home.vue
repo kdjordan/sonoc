@@ -40,7 +40,7 @@
 
 <script>
 import Logo from '@/assets/SVG/SonocLogoSVG';
-
+import { useAuth0 } from "@/auth/index";
 export default {
   data() {
     return {
@@ -63,6 +63,11 @@ export default {
       this.$router.push({ path: '/' }); 
     }
   },
+  mounted() {
+    // console.log('mounted', useAuth0)
+    // const { loginWithRedirect } = useAuth0();
+    // loginWithRedirect(); 
+  }
 };
 </script>
 
